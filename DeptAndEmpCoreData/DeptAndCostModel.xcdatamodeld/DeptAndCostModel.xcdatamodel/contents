@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="CostDept" representedClassName="CostDept" syncable="YES">
+        <attribute name="costDeptId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="organizationDept" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrganizationDept" inverseName="costDept" inverseEntity="OrganizationDept" syncable="YES"/>
+        <relationship name="semployee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SEmployee" inverseName="costDept" inverseEntity="SEmployee" syncable="YES"/>
+    </entity>
+    <entity name="OrganizationDept" representedClassName="OrganizationDept" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="orgId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="costDept" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CostDept" inverseName="organizationDept" inverseEntity="CostDept" syncable="YES"/>
+        <relationship name="semployee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SEmployee" inverseName="organizationDept" inverseEntity="SEmployee" syncable="YES"/>
+    </entity>
+    <entity name="SEmployee" representedClassName="SEmployee" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stuffId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <relationship name="costDept" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CostDept" inverseName="semployee" inverseEntity="CostDept" syncable="YES"/>
+        <relationship name="organizationDept" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrganizationDept" inverseName="semployee" inverseEntity="OrganizationDept" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CostDept" positionX="54" positionY="108" width="128" height="103"/>
+        <element name="OrganizationDept" positionX="-162" positionY="95" width="128" height="103"/>
+        <element name="SEmployee" positionX="-99" positionY="-81" width="128" height="105"/>
+    </elements>
+</model>
