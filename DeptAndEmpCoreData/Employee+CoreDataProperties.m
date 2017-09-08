@@ -2,8 +2,8 @@
 //  Employee+CoreDataProperties.m
 //  DeptAndEmpCoreData
 //
-//  Created by 首汽租赁 on 2017/9/5.
-//  Copyright © 2017年 杜俊楠. All rights reserved.
+//  Created by dododo on 2017/9/5.
+//  Copyright © 2017年 dododo. All rights reserved.
 //
 
 #import "Employee+CoreDataProperties.h"
